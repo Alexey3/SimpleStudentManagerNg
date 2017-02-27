@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div [routerLink]="['/list']" class="btn-primary btn-lg navbar-btn pointerCursor left">Back</div>
+	<span class="title">Student Info</span>
+    <div class="btn-primary btn-lg navbar-btn pointerCursor right" [routerLink]="['/edit', student.id]">Edit</div>
+</nav>
+
+<div class="container body-content">
+	<ul class="blue">
+		<li>
+			<div class="photoContainer">
+				<img class="photo" src="{{student.photoUrl}}" />
+			</div>
+   			<div class="center">{{student.name}}</div>
+		</li>
+	</ul>
+
+	<p class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</p>
+</div>

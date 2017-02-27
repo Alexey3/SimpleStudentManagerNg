@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<a [routerLink]="['/menu']" class="btn-primary btn-lg navbar-btn left">Menu</a>
+	<span class="title">Student List</span>
+</nav>
+
+<div class="container body-content">
+	<p *ngIf="!students" class="alert alert-info"><em>Loading...</em></p>
+	
+	<ul *ngIf="students">
+		<li *ngFor="let student of students">
+			<a [routerLink]="['/info', student.id]">
+				<span>{{student.name}}</span>
+				<span class="glyphicon glyphicon-chevron-right right"></span>
+			</a>
+		</li>
+	</ul>
+	
+	<p class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</p>
+</div>
